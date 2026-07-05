@@ -109,7 +109,7 @@
   .vine-divider{
     display:flex;
     justify-content:center;
-    padding:0.5rem 0 2.5rem;
+    padding:0.3rem 0 1rem;
   }
   .vine-divider svg{width:180px; height:32px;}
 
@@ -261,7 +261,7 @@
      ============================================================ */
   .hero{
     position:relative;
-    padding:5rem 1.5rem 4rem;
+    padding:5rem 1.5rem 1.2rem;
     text-align:center;
     overflow:hidden;
     background:
@@ -320,7 +320,7 @@
      top-left, clear of the tower itself. */
   .welcome-photo{
     max-width:900px; margin:0 auto;
-    padding:3.5rem 1.5rem;
+    padding:0.75rem 1.5rem;
   }
   .welcome-photo__frame{
     position:relative;
@@ -337,21 +337,21 @@
     display:block;
   }
   .welcome-photo__text{
-    position:absolute; top:6%; left:5%;
-    max-width:28%;
+    position:absolute; top:5%; left:1.5%;
+    max-width:30%;
     background:rgba(255,253,249,0.78);
     backdrop-filter:blur(3px);
     -webkit-backdrop-filter:blur(3px);
     padding:1rem 0.9rem;
     border-radius:4px;
   }
-  .welcome-photo__text h2{font-size:clamp(1rem,2.3vw,1.3rem); margin:0 0 0.7rem; line-height:1.3; white-space:nowrap;}
-  .welcome-photo__text p{margin-bottom:0.7rem; font-size:0.82rem; line-height:1.55;}
-  .welcome-photo__text .signoff{font-size:0.88rem; font-family:var(--script);}
+  .welcome-photo__text h2{font-size:clamp(1.3rem,3vw,1.7rem); margin:0 0 0.9rem; line-height:1.25; white-space:nowrap;}
+  .welcome-photo__text p{margin-bottom:0.9rem; font-size:0.95rem; line-height:1.6;}
+  .welcome-photo__text .signoff{font-size:1rem; font-family:var(--script);}
   @media (max-width:600px){
-    .welcome-photo__text{max-width:50%; padding:0.7rem 0.7rem;}
-    .welcome-photo__text h2{white-space:normal; font-size:1rem;}
-    .welcome-photo__text p{font-size:0.72rem;}
+    .welcome-photo__text{max-width:52%; padding:0.7rem 0.7rem;}
+    .welcome-photo__text h2{white-space:normal; font-size:1.1rem;}
+    .welcome-photo__text p{font-size:0.8rem;}
   }
 
   .tower-watermark{
@@ -656,11 +656,18 @@
   }
   .contact-chip--light:hover{background:var(--cream);}
 
-  .hotel-options{max-width:500px; margin:1.8rem auto 0; text-align:center;}
-  .hotel-options__label{font-size:0.85rem; color:var(--cognac); margin-bottom:0.8rem;}
+  .hotel-options{
+    max-width:560px; margin:1.8rem auto 0; text-align:center;
+    background:var(--ivory);
+    border:1.5px solid var(--cognac);
+    border-radius:var(--radius);
+    padding:1.4rem 1.3rem;
+    box-shadow:var(--shadow);
+  }
+  .hotel-options__label{font-size:0.95rem; color:var(--espresso); font-weight:600; margin-bottom:1rem;}
   .hotel-options__grid{display:flex; flex-wrap:wrap; justify-content:center; gap:0.9rem;}
   .hotel-card{
-    background:var(--ivory);
+    background:var(--cream);
     border:1px solid rgba(139,74,43,0.25);
     border-radius:var(--radius);
     padding:0.8rem 1.4rem;
@@ -676,6 +683,22 @@
     letter-spacing:0.04em; color:var(--terracotta);
   }
   .hotel-options__note{font-size:0.78rem; color:var(--taupe); margin-top:0.9rem;}
+
+  .info-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem;
+    max-width:700px; margin:2rem auto 0;
+  }
+  @media (max-width:600px){.info-grid{grid-template-columns:1fr;}}
+  .info-card{
+    background:var(--ivory);
+    border:1px solid rgba(139,74,43,0.2);
+    border-radius:var(--radius);
+    padding:1.2rem 1.3rem;
+    box-shadow:var(--shadow);
+  }
+  .info-card h3{font-size:1.05rem; margin-bottom:0.5rem;}
+  .info-card p{font-size:0.9rem; margin:0;}
+  .info-card__note{margin-top:0.5rem !important; font-size:0.82rem !important; color:var(--ink-soft);}
 
   .experience-list{
     max-width:700px; margin:2rem auto 0;
@@ -898,8 +921,8 @@
     <img src="assets/eiffel-tower-center.jpg" alt="The Eiffel Tower among spring cherry blossoms" class="welcome-photo__img">
     <div class="welcome-photo__text">
       <h2>Family and Friends</h2>
-      <p>We are overjoyed to celebrate this simcha with you in Paris. We know traveling takes planning, and we're truly grateful you're considering the journey.</p>
-      <p class="signoff">The Hirsch and Arnauve Families</p>
+      <p>We are overjoyed to<br>celebrate this simcha<br>with you in Paris.<br>We know traveling<br>takes planning, and<br>we're truly grateful<br>you're considering<br>the journey.</p>
+      <p class="signoff">The Hirsch and<br>Arnauve Families</p>
     </div>
   </div>
 </section>
@@ -1024,11 +1047,11 @@
           </div>
 
           <div class="field field--full">
-            <label>7. Would you like our team to help coordinate a hotel or a stay with a local family, or will you be arranging that yourself?</label>
+            <label>7. What are your plans for your stay in Paris?</label>
             <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="hotelHelp" value="coordinate"> Yes, please help coordinate our hotel or a local family stay.</label>
-              <label class="radio-option"><input type="radio" name="hotelHelp" value="local"> We'll be staying with family or friends locally.</label>
-              <label class="radio-option"><input type="radio" name="hotelHelp" value="independent"> No thanks, we're arranging our own accommodations.</label>
+              <label class="radio-option"><input type="radio" name="hotelHelp" value="independent"> I'll arrange my own accommodations, possibly from the hotel options listed below.</label>
+              <label class="radio-option"><input type="radio" name="hotelHelp" value="local"> We'll be staying with our own family or friends locally.</label>
+              <label class="radio-option"><input type="radio" name="hotelHelp" value="coordinate"> Can you help us find a local family to stay with?</label>
             </div>
           </div>
         </div>
@@ -1072,10 +1095,23 @@
   <div class="center" style="margin-top:1.4rem;">
     <a href="https://chat.whatsapp.com/JRTLeAmuZJ08BlWw82KIAF?s=sw&amp;p=i&amp;mlu=1" target="_blank" rel="noopener noreferrer" class="btn btn--solid">💬 Join the Paris Wedding Guest Space</a>
   </div>
-  <p class="measure center" style="margin-top:1.6rem;">A hosted Shabbos and a welcome lounge with food and drinks will be available all weekend. Davening is at the Pletzl, 17 rue des Rosiers (Paris 4th); meals at Beth Chabad Bastille, 37 rue Popincourt (Paris 11th). Book a hotel or Airbnb within walking distance of both, with air conditioning — Airbnbs can be tricky on Shabbos.</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>🕍 Davening</h3>
+      <p>The Pletzl<br>17 rue des Rosiers, Paris 4th</p>
+    </div>
+    <div class="info-card">
+      <h3>🍽️ Meals &amp; Hospitality Lounge</h3>
+      <p>Beth Chabad Bastille<br>37 rue Popincourt, Paris 11th</p>
+      <p class="info-card__note">Meals, plus a welcome lounge with food and drinks available all weekend for brunch and snacking.</p>
+    </div>
+  </div>
+
+  <p class="measure center" style="margin-top:1.6rem; font-size:0.9rem;">When booking a hotel or Airbnb, look for somewhere within walking distance of both, with air conditioning — Airbnbs can be tricky to access on Shabbos.</p>
 
   <div class="hotel-options">
-    <p class="hotel-options__label">Recommended hotels — both can provide Shabbos keys:</p>
+    <p class="hotel-options__label">🏨 Recommended Hotels — both can provide Shabbos keys</p>
     <div class="hotel-options__grid">
       <a href="https://www.booking.com/hotel/fr/les-jardins-du-marais.html?aid=304142&checkin=2026-08-20&checkout=2026-08-24" target="_blank" rel="noopener noreferrer" class="hotel-card">Les Jardins du Marais<span class="hotel-card__cta">View on Booking.com →</span></a>
       <a href="https://www.booking.com/hotel/fr/sebco.html?aid=304142&checkin=2026-08-20&checkout=2026-08-24" target="_blank" rel="noopener noreferrer" class="hotel-card">Hôtel Se&amp;Co<span class="hotel-card__cta">View on Booking.com →</span></a>
