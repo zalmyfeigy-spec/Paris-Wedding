@@ -75,7 +75,7 @@
   }
 
   .section{
-    padding:4.5rem 1.5rem;
+    padding:6rem 1.5rem;
     max-width:1080px;
     margin:0 auto;
   }
@@ -147,12 +147,6 @@
 
   .footer-florals{display:flex; justify-content:center; margin-bottom:0.4rem;}
 
-  .top-banner{
-    background:var(--espresso);
-    display:flex; justify-content:center;
-    padding:0.5rem 0;
-  }
-
   /* ============================================================
      SIDE GARLANDS — vertical floral borders running the full
      height of the page, so wide screens don't read as empty
@@ -204,7 +198,7 @@
     display:flex; gap:2rem;
     list-style:none;
   }
-  .nav__links a, .nav__link-btn{
+  .nav__links a{
     text-decoration:none;
     font-size:0.85rem;
     letter-spacing:0.06em;
@@ -212,20 +206,15 @@
     text-transform:uppercase;
     position:relative;
     padding-bottom:3px;
-    background:none;
-    border:none;
-    font-family:var(--sans);
-    cursor:pointer;
   }
-  .nav__links a::after, .nav__link-btn::after{
+  .nav__links a::after{
     content:'';
     position:absolute; left:0; bottom:0;
     width:0; height:1px;
     background:var(--terracotta);
     transition:width 0.25s ease;
   }
-  .nav__links a:hover::after, .nav__links a:focus-visible::after,
-  .nav__link-btn:hover::after, .nav__link-btn:focus-visible::after{width:100%;}
+  .nav__links a:hover::after, .nav__links a:focus-visible::after{width:100%;}
   .nav__cta{
     background:var(--terracotta);
     color:var(--ivory) !important;
@@ -315,43 +304,6 @@
   }
   @media (max-width:700px){.hero__tower{width:min(220px, 60vw);}}
 
-  /* Welcome section: a thin, bordered "letter" beside a larger photo. */
-  .welcome-split{
-    max-width:1080px; margin:0 auto;
-    padding:3.5rem 1.5rem;
-    display:grid;
-    grid-template-columns:1fr 4fr;
-    gap:1.6rem;
-    align-items:stretch;
-  }
-  @media (max-width:820px){
-    .welcome-split{grid-template-columns:1fr; padding:2.5rem 1.5rem;}
-  }
-  .welcome-split__img{
-    width:100%; height:100%; aspect-ratio:3/4; object-fit:cover;
-    border-radius:6px;
-    border:8px solid var(--ivory);
-    outline:1px solid rgba(139,74,43,0.2);
-    box-shadow:0 25px 55px -18px rgba(58,42,30,0.4);
-  }
-  .welcome-split__text{
-    background:var(--ivory);
-    border:1.5px solid var(--cognac);
-    padding:1.8rem 1.3rem;
-    position:relative;
-    box-shadow:var(--shadow);
-    display:flex; flex-direction:column; justify-content:center;
-  }
-  .welcome-split__text::before{
-    content:'';
-    position:absolute; inset:7px;
-    border:1px solid rgba(139,74,43,0.35);
-    pointer-events:none;
-  }
-  .welcome-split__text h2{font-size:clamp(1.5rem,3.4vw,1.9rem); margin:0 0 1rem; line-height:1.25;}
-  .welcome-split__text p{margin-bottom:1rem; font-size:1.05rem; line-height:1.6;}
-  .welcome-split__text .signoff{font-size:1rem; font-family:var(--script); font-size:1.5rem;}
-
   .tower-watermark{
     position:absolute; top:50%; left:50%;
     transform:translate(-50%,-50%);
@@ -359,22 +311,6 @@
     opacity:0.1;
     pointer-events:none;
     z-index:-1;
-  }
-
-  .photo-watermark{
-    position:absolute; top:50%; left:50%;
-    transform:translate(-50%,-50%);
-    width:480px; max-width:75%;
-    aspect-ratio:1/1; object-fit:cover; object-position:center 22%;
-    border-radius:50%;
-    opacity:0.13;
-    pointer-events:none;
-    z-index:-1;
-  }
-  .photo-watermark--large{
-    width:640px; max-width:95%;
-    aspect-ratio:3/4; border-radius:8px;
-    opacity:0.09;
   }
 
   .hero__actions{
@@ -399,14 +335,6 @@
   .btn:hover{background:var(--espresso); color:var(--ivory); border-color:var(--espresso);}
   .btn--solid{background:var(--terracotta); border-color:var(--terracotta); color:var(--ivory);}
   .btn--solid:hover{background:var(--espresso); border-color:var(--espresso);}
-
-  @keyframes flashButton{
-    0%, 100%{ background:var(--fl-crimson); border-color:var(--fl-crimson); color:var(--fl-ivory); }
-    50%{ background:var(--fl-ivory); border-color:var(--fl-crimson); color:var(--fl-crimson); }
-  }
-  .btn--flash{ animation:flashButton 3.6s ease-in-out infinite; }
-  .btn--flash:hover{ animation-play-state:paused; }
-  .btn--flash.is-playing{ animation:none; background:var(--espresso); border-color:var(--espresso); color:var(--ivory); }
 
   /* countdown — the emotional centerpiece of the hero, made to pop */
   .countdown{
@@ -630,69 +558,10 @@
   /* ============================================================
      HOSPITALITY PROMISES
      ============================================================ */
-  .promise-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; margin-top:2.5rem; max-width:900px; margin-left:auto; margin-right:auto;}
-  @media (max-width:700px){.promise-grid{grid-template-columns:1fr;}}
+  .promise-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:2.5rem;}
+  @media (max-width:820px){.promise-grid{grid-template-columns:1fr;}}
   .promise h3{font-size:1.2rem; margin-bottom:0.6rem;}
   .promise p{font-size:0.92rem;}
-
-  .contact-list{display:flex; flex-wrap:wrap; justify-content:center; gap:0.8rem;}
-  .contact-chip{
-    display:inline-block;
-    font-size:0.85rem; letter-spacing:0.02em;
-    padding:0.7rem 1.3rem;
-    border:1px solid rgba(252,246,236,0.35);
-    border-radius:30px;
-    color:var(--fl-ivory) !important;
-    text-decoration:none;
-    transition:background 0.2s ease;
-  }
-  .contact-chip:hover{background:rgba(252,246,236,0.12);}
-  .contact-chip--light{
-    color:var(--espresso) !important;
-    border:1px solid rgba(139,74,43,0.35);
-    background:var(--ivory);
-  }
-  .contact-chip--light:hover{background:var(--cream);}
-
-  .hotel-options{max-width:500px; margin:1.8rem auto 0; text-align:center;}
-  .hotel-options__label{font-size:0.85rem; color:var(--cognac); margin-bottom:0.8rem;}
-  .hotel-options__grid{display:flex; flex-wrap:wrap; justify-content:center; gap:0.9rem;}
-  .hotel-card{
-    background:var(--ivory);
-    border:1px solid rgba(139,74,43,0.25);
-    border-radius:var(--radius);
-    padding:0.8rem 1.4rem;
-    font-family:var(--serif); font-size:1.05rem; color:var(--espresso);
-    box-shadow:var(--shadow);
-    text-decoration:none;
-    display:flex; flex-direction:column; align-items:center; gap:0.3rem;
-    transition:transform 0.2s ease;
-  }
-  .hotel-card:hover{transform:translateY(-2px);}
-  .hotel-card__cta{
-    font-family:var(--sans); font-size:0.72rem; text-transform:uppercase;
-    letter-spacing:0.04em; color:var(--terracotta);
-  }
-  .hotel-options__note{font-size:0.78rem; color:var(--taupe); margin-top:0.9rem;}
-
-  .experience-list{
-    max-width:700px; margin:2rem auto 0;
-    background:var(--ivory);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:1.6rem 1.8rem;
-  }
-  .experience-item{
-    display:flex; gap:0.9rem; align-items:flex-start;
-    padding:0.8rem 0;
-    font-size:0.95rem;
-  }
-  .experience-item + .experience-item{border-top:1px solid rgba(139,74,43,0.14);}
-  .experience-item__icon{font-size:1.2rem; line-height:1.4;}
-
-  .quote-block--small{padding:1.6rem 1.5rem;}
-  .quote-block--small p{font-size:1.05rem;}
-  .quote-block--small cite{font-size:1.1rem;}
 
   /* ============================================================
      CONCIERGE / STAY CONNECTED / FINALE — banded tint sections
@@ -808,18 +677,6 @@
 <!-- ================= SR-only live region for form status ================= -->
 <div id="srStatus" aria-live="polite" style="position:absolute;left:-9999px;"></div>
 
-<!-- ================= TOP BANNER (matches footer) ================= -->
-<div class="top-banner">
-  <svg class="floral-spray floral-spray--footer" viewBox="0 0 100 60" aria-hidden="true">
-    <use href="#florLeaf" transform="translate(20,42) rotate(-30) scale(0.9)" fill="var(--fl-leaf)"/>
-    <use href="#florLeaf" transform="translate(80,42) rotate(210) scale(0.9)" fill="var(--fl-leaf)"/>
-    <use href="#florRose" transform="translate(50,32) scale(1.0)" fill="var(--fl-crimson)"/>
-    <use href="#florRose" transform="translate(30,22) scale(0.7)" fill="var(--fl-orange)"/>
-    <use href="#florRose" transform="translate(70,22) scale(0.7)" fill="var(--fl-ivory)"/>
-    <use href="#florLily" transform="translate(50,12) scale(0.6)" fill="var(--fl-orange)"/>
-  </svg>
-</div>
-
 <!-- ================= NAVIGATION ================= -->
 <nav class="nav">
   <div class="nav__inner">
@@ -831,8 +688,6 @@
       <li><a href="#experiences">Experiences</a></li>
       <li><a href="#rsvp" class="nav__cta">RSVP</a></li>
       <li><a href="#concierge">Concierge</a></li>
-      <li><button type="button" id="navRegistryOpen" class="nav__link-btn">Registry</button></li>
-      <li><a href="https://chat.whatsapp.com/JRTLeAmuZJ08BlWw82KIAF?s=sw&amp;p=i&amp;mlu=1" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a></li>
     </ul>
   </div>
 </nav>
@@ -862,26 +717,37 @@
     <use href="#florBerry" transform="translate(80,35)" fill="var(--caramel)"/>
   </svg>
   <div class="hero__bh">ב״ה</div>
-  <p class="eyebrow hero__eyebrow">The Hirsch &amp; Arnauve Families</p>
-  <p class="hero__sub">Invite you to the wedding celebration of their children</p>
+  <p class="eyebrow hero__eyebrow">You Are Invited</p>
   <h1 class="hero__names">Zalmy <span class="amp">&amp;</span> Feigy</h1>
+  <p class="hero__sub">Invite you to celebrate their wedding</p>
   <p class="hero__place">In Paris, France</p>
   <p class="hero__tagline">Bienvenue à Paris — A Weekend of Family • Simcha • Shabbos • Celebration</p>
 
-  <div class="hero__actions" style="margin-top:1.2rem;">
-    <button class="btn btn--flash" id="musicToggle" aria-pressed="false">
+  <!-- Signature element: the real Eiffel Tower photo, framed simply.
+       A faint, low-key version of the original line-art tower now
+       appears further down the page (Stay Connected section). -->
+  <div class="hero__tower" aria-hidden="true">
+    <svg viewBox="0 0 300 40" style="width:70%; margin:0 auto; display:block;" aria-hidden="true">
+      <path d="M20 20 C 60 5, 100 30, 150 15 C 200 30, 240 5, 280 20" fill="none" stroke="var(--caramel)" stroke-width="1.4" opacity="0.65"/>
+      <use href="#florRose" transform="translate(150,15) scale(0.5)" fill="var(--fl-crimson)"/>
+    </svg>
+    <img src="assets/eiffel-tower-center.jpg" alt="The Eiffel Tower among spring cherry blossoms" class="hero__photo">
+  </div>
+
+  <div class="hero__actions">
+    <button class="btn" id="musicToggle" aria-pressed="false">
       <span id="musicIcon">🎵</span> <span id="musicLabel">Play Wedding Melody</span>
     </button>
   </div>
 
-  <div style="margin-top:1rem;">
+  <div style="margin-top:1.8rem;">
     <div class="countdown" id="countdown" aria-label="Countdown to the wedding">
       <div class="countdown__unit"><div class="countdown__num" id="cdDays">--</div><div class="countdown__label">Days</div></div>
       <div class="countdown__unit"><div class="countdown__num" id="cdHours">--</div><div class="countdown__label">Hours</div></div>
       <div class="countdown__unit"><div class="countdown__num" id="cdMins">--</div><div class="countdown__label">Mins</div></div>
       <div class="countdown__unit"><div class="countdown__num" id="cdSecs">--</div><div class="countdown__label">Secs</div></div>
     </div>
-    <p style="margin-top:0.5rem; font-size:0.8rem; letter-spacing:0.06em; color:var(--cognac); text-transform:uppercase;">Until We Celebrate Together</p>
+    <p style="margin-top:0.7rem; font-size:0.8rem; letter-spacing:0.06em; color:var(--cognac); text-transform:uppercase;">Until We Celebrate Together</p>
   </div>
 
   <!-- REPLACE: point this at your own audio file. See manual, Section E. -->
@@ -890,39 +756,142 @@
   </audio>
 </header>
 
-<!-- ================= WELCOME — short text beside a larger photo ================= -->
-<section class="welcome-split reveal" id="journey">
-  <div class="welcome-split__text">
-    <h2>Family and Friends</h2>
-    <p>We are overjoyed to celebrate this simcha with you in Paris. We know traveling takes planning, and we're truly grateful you're considering the journey.</p>
-    <p class="signoff">The Hirsch and Arnauve Families</p>
-  </div>
-  <div class="welcome-split__photo">
-    <img src="assets/eiffel-tower-center.jpg" alt="The Eiffel Tower among spring cherry blossoms" class="welcome-split__img">
-  </div>
+<!-- ================= WELCOME ================= -->
+<section class="section prose measure reveal" id="journey">
+  <p class="eyebrow center">A Letter To Our Guests</p>
+  <h2 class="center">Dear Family and Friends</h2>
+  <p>We are overjoyed to invite you to join us for the wedding of Zalmy and Feigy in the beautiful city of Paris. Celebrating this special simcha with our closest family and friends means the world to us.</p>
+  <p>We know that traveling internationally takes extra planning. Whether you're joining us for the entire weekend or simply flying in for the wedding day, we are truly grateful you're considering making the journey to celebrate with us.</p>
+  <p>From the moment you arrive in Paris until the moment you return home, we hope this weekend feels less like attending an event and more like being welcomed into an unforgettable family celebration.</p>
+  <p>We hope your only responsibility is to enjoy the celebration while we help make the planning as effortless as possible. Our hospitality team is available to help coordinate accommodations, recommend travel options, answer questions, and assist with planning your stay so you can focus entirely on the joy of the simcha.</p>
+  <p class="signoff">With all our love,<br>The Hirsch and Arnauve Families</p>
 </section>
 
 <div class="vine-divider" aria-hidden="true">
   <svg viewBox="0 0 180 32"><path d="M0 16 C 40 0, 60 32, 90 16 C 120 0, 140 32, 180 16" fill="none" stroke="#C99356" stroke-width="1.2"/><use href="#florRose" transform="translate(90,16) scale(0.55)" fill="var(--fl-crimson)"/></svg>
 </div>
 
-<!-- ================= CHOOSE YOUR PARIS EXPERIENCE (condensed) ================= -->
-<section class="section section--tint reveal" id="experiences" style="position:relative; overflow:hidden; padding-top:3.5rem; padding-bottom:3.5rem;">
-  <img src="assets/eiffel-tower-center.jpg" alt="" aria-hidden="true" class="photo-watermark photo-watermark--large">
+<!-- ================= WORDS FROM THE COUPLE ================= -->
+<section class="section reveal">
+  <div class="quote-block">
+    <svg class="floral-spray floral-spray--card floral-spray--tl" viewBox="0 0 100 100" aria-hidden="true">
+      <use href="#florLeaf" transform="translate(10,55) rotate(-40) scale(1.1)" fill="var(--fl-leaf)"/>
+      <use href="#florLily" transform="translate(40,30) scale(0.9)" fill="var(--fl-orange)"/>
+      <use href="#florRose" transform="translate(18,30) scale(1.0)" fill="var(--fl-crimson)"/>
+      <use href="#florRose" transform="translate(45,15) scale(0.8)" fill="var(--fl-ivory)"/>
+      <use href="#florCarnation" transform="translate(50,50) scale(0.85)" fill="var(--fl-peach)"/>
+      <use href="#florBerry" transform="translate(55,25)" fill="var(--caramel)"/>
+    </svg>
+    <svg class="floral-spray floral-spray--card floral-spray--tr" viewBox="0 0 100 100" aria-hidden="true">
+      <use href="#florLeaf" transform="translate(10,55) rotate(-40) scale(1.1)" fill="var(--fl-leaf)"/>
+      <use href="#florLily" transform="translate(40,30) scale(0.9)" fill="var(--fl-orange)"/>
+      <use href="#florRose" transform="translate(18,30) scale(1.0)" fill="var(--fl-ivory)"/>
+      <use href="#florRose" transform="translate(45,15) scale(0.8)" fill="var(--fl-crimson)"/>
+      <use href="#florCarnation" transform="translate(50,50) scale(0.85)" fill="var(--fl-peach)"/>
+      <use href="#florBerry" transform="translate(55,25)" fill="var(--caramel)"/>
+    </svg>
+    <p>“We can't imagine beginning this new chapter without the people who have shaped our lives. Thank you for considering making this journey with us — it truly means more than words can express.”</p>
+    <cite>Zalmy &amp; Feigy</cite>
+  </div>
+</section>
+
+<!-- ================= WHY PARIS ================= -->
+<section class="section--wrap reveal">
+  <div class="paris-banner" aria-hidden="true">
+    <svg viewBox="0 0 1200 380" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#4A2036"/>
+          <stop offset="35%" stop-color="#8E1F2E"/>
+          <stop offset="65%" stop-color="#D97D3D"/>
+          <stop offset="100%" stop-color="#F3B98A"/>
+        </linearGradient>
+        <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#FCF6EC" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#FCF6EC" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1200" height="380" fill="url(#skyGrad)"/>
+      <circle cx="620" cy="240" r="150" fill="url(#sunGlow)"/>
+      <circle cx="620" cy="240" r="55" fill="#FCF6EC" opacity="0.9"/>
+      <g fill="#2C1E15" opacity="0.92">
+        <rect x="0" y="320" width="90" height="60"/>
+        <rect x="80" y="300" width="60" height="80"/>
+        <polygon points="140,300 170,270 200,300"/>
+        <rect x="140" y="300" width="60" height="80"/>
+        <rect x="210" y="330" width="80" height="50"/>
+        <rect x="300" y="290" width="70" height="90"/>
+        <polygon points="300,290 335,255 370,290"/>
+        <rect x="380" y="315" width="100" height="65"/>
+        <rect x="490" y="335" width="70" height="45"/>
+        <rect x="740" y="330" width="90" height="50"/>
+        <rect x="840" y="300" width="60" height="80"/>
+        <polygon points="840,300 870,270 900,300"/>
+        <rect x="910" y="320" width="80" height="60"/>
+        <rect x="1000" y="295" width="70" height="85"/>
+        <polygon points="1000,295 1035,260 1070,295"/>
+        <rect x="1080" y="330" width="120" height="50"/>
+      </g>
+      <g fill="#2C1E15">
+        <path d="M615 40 L560 260 L520 380 L560 380 L595 270 L615 200 L635 270 L670 380 L710 380 L670 260 Z"/>
+        <path d="M540 300 L690 300 L680 320 L550 320 Z" opacity="0.95"/>
+      </g>
+    </svg>
+  </div>
+  <div class="section prose measure" style="padding-top:2.6rem;">
+    <p class="eyebrow center">🗼 Why Paris?</p>
+    <h2 class="center">The City of Light</h2>
+    <p>Paris has long been known as the City of Light — a place of beauty, celebration, and unforgettable moments. As we begin this new chapter together, we couldn't imagine a more meaningful place to gather with the people we love most.</p>
+    <p>We hope this weekend will be filled with laughter, friendship, Shabbos, and memories we'll all cherish for years to come as one unified family celebration.</p>
+  </div>
+</section>
+
+<div class="vine-divider" aria-hidden="true">
+  <svg viewBox="0 0 180 32"><path d="M0 16 C 40 32, 60 0, 90 16 C 120 32, 140 0, 180 16" fill="none" stroke="#C99356" stroke-width="1.2"/><use href="#florRose" transform="translate(90,16) scale(0.55)" fill="var(--fl-orange)"/></svg>
+</div>
+
+<!-- ================= PORTRAIT GALLERY ================= -->
+<section class="section reveal">
+  <p class="eyebrow center">The Chosson &amp; Kallah</p>
+  <div class="gallery" style="margin-top:2.2rem;">
+    <div class="gallery__col gallery__col--right">
+      <img src="assets/zalmy.jpg" alt="Zalmy" class="portrait portrait--single portrait--photo">
+      <p class="gallery__name">Zalmy</p>
+    </div>
+    <div class="gallery__col gallery__center">
+      <p class="gallery__label" style="margin-bottom:1rem;">— Paris —</p>
+      <img src="assets/eiffel-tower-center.jpg" alt="The Eiffel Tower among spring cherry blossoms" class="paris-photo">
+    </div>
+    <div class="gallery__col gallery__col--left">
+      <div class="portrait portrait--single"><span class="portrait__mono">F</span><span class="portrait__note">Add Feigy's photo — see manual</span></div>
+      <p class="gallery__name">Feigy</p>
+    </div>
+  </div>
+</section>
+
+<div class="vine-divider" aria-hidden="true">
+  <svg viewBox="0 0 180 32"><path d="M0 16 C 40 0, 60 32, 90 16 C 120 0, 140 32, 180 16" fill="none" stroke="#C99356" stroke-width="1.2"/><use href="#florRose" transform="translate(90,16) scale(0.55)" fill="var(--fl-ivory)"/></svg>
+</div>
+
+<!-- ================= CHOOSE YOUR PARIS EXPERIENCE ================= -->
+<section class="section section--tint reveal" id="experiences">
   <p class="eyebrow center">✈️ Choose Your Paris Experience</p>
   <h2 class="center">Three Ways to Join Us</h2>
-  <div class="experience-list">
-    <div class="experience-item">
-      <span class="experience-item__icon">🍷</span>
-      <div><strong>The Shabbos Weekend</strong> — join us for Shabbos the week before, for meals and celebration.</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card__icon">🍷</span>
+      <h3>The Shabbos Weekend</h3>
+      <p>Arrive Thursday night or Friday morning. Settle in early, enjoy the Wedding Hospitality Lounge, and spend an unforgettable, worry-free Shabbos together with the families before the big day.</p>
     </div>
-    <div class="experience-item">
-      <span class="experience-item__icon">✈️</span>
-      <div><strong>The Wedding Celebration</strong> — fly Motzei Shabbos on the 11:30 PM flight, landing in Paris ~1:00 PM, in town by 3:00 PM, ahead of the afternoon Chuppah.</div>
+    <div class="card">
+      <span class="card__icon">✈️</span>
+      <h3>The Wedding Celebration</h3>
+      <p>Fly out Motzei Shabbos from New York. Land Sunday morning with plenty of time to check in, freshen up, and head straight to the afternoon Chuppah.</p>
     </div>
-    <div class="experience-item">
-      <span class="experience-item__icon">🗼</span>
-      <div><strong>The Paris Getaway</strong> — choose your own dates and stay longer to enjoy the sights of France.</div>
+    <div class="card">
+      <span class="card__icon">🗼</span>
+      <h3>The Paris Getaway</h3>
+      <p>Choose your own dates. Come early or stay late to enjoy the beautiful sights of France. Our hospitality team is happy to help coordinate your stay for whichever dates you choose.</p>
     </div>
   </div>
 </section>
@@ -932,7 +901,7 @@
 </div>
 
 <!-- ================= RSVP / PLANNING FORM ================= -->
-<section class="section reveal" id="rsvp" style="padding-top:3rem;">
+<section class="section reveal" id="rsvp">
   <p class="eyebrow center">🗺️ Begin Your Paris Journey</p>
   <h2 class="center">Share Your Travel Plans</h2>
   <p class="center measure" style="margin:0.9rem auto 0;">To help us prepare the most comfortable and enjoyable experience for everyone, we'd appreciate if you could share your current travel plans.</p>
@@ -1010,25 +979,64 @@
           </div>
         </div>
 
-        <!-- Q6–Q7: hidden automatically when Q4 = "regret" -->
+        <!-- Q6–Q10: hidden automatically when Q4 = "regret" -->
         <div class="conditional-block" id="conditionalQuestions">
-          <div class="field">
-            <label for="arrivalDate">6. Planned arrival date</label>
-            <input type="date" id="arrivalDate" name="arrivalDate">
-          </div>
-          <div class="field">
-            <label for="departureDate">Planned departure date</label>
-            <input type="date" id="departureDate" name="departureDate">
+          <div class="field field--full">
+            <label for="travelWith">6. We hope to travel with / be near:</label>
+            <input type="text" id="travelWith" name="travelWith">
           </div>
 
           <div class="field field--full">
-            <label>7. Would you like our team to help coordinate a hotel or a stay with a local family, or will you be arranging that yourself?</label>
+            <label>7. When would you ideally like to finalize your travel plans?</label>
             <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="hotelHelp" value="coordinate"> Yes, please help coordinate our hotel or a local family stay.</label>
-              <label class="radio-option"><input type="radio" name="hotelHelp" value="local"> We'll be staying with family or friends locally.</label>
-              <label class="radio-option"><input type="radio" name="hotelHelp" value="independent"> No thanks, we're arranging our own accommodations.</label>
+              <label class="radio-option"><input type="radio" name="finalizeTiming" value="2weeks"> Within two weeks</label>
+              <label class="radio-option"><input type="radio" name="finalizeTiming" value="1month"> Within a month</label>
+              <label class="radio-option"><input type="radio" name="finalizeTiming" value="exploring"> Still exploring options</label>
             </div>
           </div>
+
+          <div class="field field--full">
+            <label>8. Which experience best fits your schedule?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="experience" value="shabbos"> The Shabbos Weekend — Thursday/Friday arrival</label>
+              <label class="radio-option"><input type="radio" name="experience" value="wedding"> The Wedding Celebration — Sunday morning arrival</label>
+              <label class="radio-option"><input type="radio" name="experience" value="getaway"> The Paris Getaway — custom extended dates</label>
+              <label class="radio-option"><input type="radio" name="experience" value="deciding"> Still deciding</label>
+            </div>
+          </div>
+
+          <div class="field field--full">
+            <label for="departureCity">9. What city would you likely be flying from?</label>
+            <input type="text" id="departureCity" name="departureCity">
+          </div>
+          <div class="field field--full">
+            <label>Would you like us to prepare recommended flight itineraries from your departure city?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="flightHelp" value="yes"> Yes</label>
+              <label class="radio-option"><input type="radio" name="flightHelp" value="no"> No</label>
+              <label class="radio-option"><input type="radio" name="flightHelp" value="maybe"> Maybe</label>
+            </div>
+          </div>
+
+          <div class="field field--full">
+            <label>10. Would you like our team to help manage your room booking within our coordinated hotel blocks?</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="roomBlock" value="yes"> Yes, please coordinate our room.</label>
+              <label class="radio-option"><input type="radio" name="roomBlock" value="no"> No, we will be arranging our own accommodations independently.</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="field field--full">
+          <label for="dietaryNeeds">11. Special Dietary, Accessibility, or Halachic Needs</label>
+          <textarea id="dietaryNeeds" name="dietaryNeeds"></textarea>
+        </div>
+
+        <!-- Q12 -->
+        <div class="field field--full">
+          <label for="otherNotes">12. Anything else you would like our travel coordinators to know?</label>
+          <textarea id="otherNotes" name="otherNotes"></textarea>
         </div>
 
         <div class="form-submit-row">
@@ -1052,8 +1060,8 @@
         <li>🗼 Paris travel tips</li>
       </ul>
       <div>
-        <!-- WhatsApp group link -->
-        <a href="https://chat.whatsapp.com/JRTLeAmuZJ08BlWw82KIAF?s=sw&amp;p=i&amp;mlu=1" target="_blank" rel="noopener noreferrer" class="btn btn--solid">💬 Join the Paris Wedding Guest Space</a>
+        <!-- REPLACE href with your real WhatsApp group invite link — see manual, Section E -->
+        <a href="https://chat.whatsapp.com/REPLACE_WITH_YOUR_GROUP_LINK" target="_blank" rel="noopener noreferrer" class="btn btn--solid">💬 Join the Paris Wedding Guest Space</a>
       </div>
     </div>
   </div>
@@ -1063,36 +1071,65 @@
   <svg viewBox="0 0 180 32"><path d="M0 16 C 40 0, 60 32, 90 16 C 120 0, 140 32, 180 16" fill="none" stroke="#C99356" stroke-width="1.2"/><use href="#florRose" transform="translate(90,16) scale(0.55)" fill="var(--fl-crimson)"/></svg>
 </div>
 
-<!-- ================= GOOD TO KNOW (logistics + contacts, merged) ================= -->
+<!-- ================= HOSPITALITY PROMISES ================= -->
 <section class="section section--tint reveal">
-  <p class="eyebrow center">🥐 Good to Know</p>
-  <h2 class="center">Getting There &amp; Settling In</h2>
-  <div class="center" style="margin-top:1.4rem;">
-    <a href="https://chat.whatsapp.com/JRTLeAmuZJ08BlWw82KIAF?s=sw&amp;p=i&amp;mlu=1" target="_blank" rel="noopener noreferrer" class="btn btn--solid">💬 Join the Paris Wedding Guest Space</a>
-  </div>
-  <p class="measure center" style="margin-top:1.6rem;">A hosted Shabbos and a welcome lounge with food and drinks will be available all weekend. Davening is at the Pletzl, 17 rue des Rosiers (Paris 4th); meals at Beth Chabad Bastille, 37 rue Popincourt (Paris 11th). Book a hotel or Airbnb within walking distance of both, with air conditioning — Airbnbs can be tricky on Shabbos.</p>
-
-  <div class="hotel-options">
-    <p class="hotel-options__label">Recommended hotels — both can provide Shabbos keys:</p>
-    <div class="hotel-options__grid">
-      <a href="https://www.booking.com/hotel/fr/les-jardins-du-marais.html?aid=304142&checkin=2026-08-20&checkout=2026-08-24" target="_blank" rel="noopener noreferrer" class="hotel-card">Les Jardins du Marais<span class="hotel-card__cta">View on Booking.com →</span></a>
-      <a href="https://www.booking.com/hotel/fr/sebco.html?aid=304142&checkin=2026-08-20&checkout=2026-08-24" target="_blank" rel="noopener noreferrer" class="hotel-card">Hôtel Se&amp;Co<span class="hotel-card__cta">View on Booking.com →</span></a>
+  <p class="eyebrow center">🥐 Our Hospitality Promises</p>
+  <h2 class="center">You Can Rest Completely</h2>
+  <div class="promise-grid">
+    <div class="promise">
+      <h3>🍷 The Shabbos Experience</h3>
+      <p>For guests arriving for the weekend, a beautifully catered, uplifting community Shabbos will be hosted. Shabbos meals from Friday night through Motzei Shabbos will be arranged and hosted for our guests.</p>
     </div>
-    <p class="hotel-options__note">Tip: Booking.com is sometimes cheaper, with more flexible cancellation terms.</p>
-  </div>
-
-  <div class="contact-list" style="margin-top:2rem;" id="concierge">
-    <a href="tel:+33607368105" class="contact-chip contact-chip--light">Mati — +33 6 07 36 81 05</a>
-    <a href="tel:+33665011820" class="contact-chip contact-chip--light">Levi — +33 6 65 01 18 20</a>
-    <a href="tel:+33650025955" class="contact-chip contact-chip--light">Beila — +33 6 50 02 59 55</a>
+    <div class="promise">
+      <h3>☕ The Wedding Hospitality Lounge</h3>
+      <p>From Friday morning through the wedding celebration, we will have a dedicated welcome room stocked with fresh food, pastries, light meals, and drinks available to our guests throughout the day. Drop in whenever you need a coffee, a snack, or a place to relax.</p>
+    </div>
+    <div class="promise">
+      <h3>🔑 Seamless Shabbos Logistics</h3>
+      <p>We are working hand-in-hand with our selected hotels to handle all halachic details, including arranging physical Shabbos keys and ensuring ideal walking distances so you can rest completely.</p>
+    </div>
   </div>
 </section>
 
-<!-- ================= CLOSING (compact) ================= -->
-<section class="section band center" style="padding:3.5rem 1.5rem;">
-  <p style="font-family:var(--script); font-size:1.9rem; color:var(--caramel);">🗼 Until We Meet in Paris...</p>
-  <p class="measure" style="margin:0.8rem auto 0; font-size:0.95rem;">À bientôt — we can't wait to celebrate with you.</p>
-  <p class="signoff" style="color:var(--caramel); font-size:0.95rem; margin-top:0.7rem;">With love, The Hirsch &amp; Arnauve Families</p>
+<!-- ================= CONCIERGE ================= -->
+<section class="section band" id="concierge">
+  <p class="eyebrow center">🛎️ Our Wedding Hospitality Team</p>
+  <h2 class="center measure" style="margin:0 auto;">Entirely Stress-Free, From Flights to Shabbos</h2>
+  <p class="center measure" style="margin:1.4rem auto 0;">Whether you need personalized assistance with booking your flights, navigating hotel room blocks, managing Shabbos logistics, or extending your stay to tour Paris, we are here to ensure this hosted family celebration is entirely stress-free.</p>
+  <p class="center measure" style="margin:1rem auto 0;">Once your form is submitted, one of our team members will personally reach out directly via WhatsApp or email to help with any questions or specific arrangements.</p>
+</section>
+
+<!-- ================= STAY CONNECTED ================= -->
+<section class="section prose measure reveal" style="position:relative; overflow:hidden;">
+  <svg class="tower-watermark" viewBox="0 0 300 340" aria-hidden="true">
+    <g fill="none" stroke="var(--taupe)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M150 20 L 118 150 L 60 300"/>
+      <path d="M150 20 L 182 150 L 240 300"/>
+      <path d="M150 20 L 150 300"/>
+      <path d="M95 190 L 205 190"/>
+      <path d="M78 240 L 222 240"/>
+      <path d="M60 300 L 240 300"/>
+      <path d="M95 190 L 150 20"/>
+      <path d="M205 190 L 150 20"/>
+      <path d="M78 240 L 118 150"/>
+      <path d="M222 240 L 182 150"/>
+      <path d="M60 300 L 118 150"/>
+      <path d="M240 300 L 182 150"/>
+    </g>
+  </svg>
+  <p class="eyebrow center">📅 Stay Connected</p>
+  <h2 class="center">More Details Are Coming</h2>
+  <p>As plans develop over the coming months, we'll continue sharing updates, travel information, and helpful resources here. We look forward to welcoming you to Paris and keeping everything as simple, seamless, and enjoyable as possible.</p>
+  <p style="text-align:center; margin-top:1rem;">We're looking forward to welcoming each of you personally to Paris.</p>
+  <p class="signoff center">Warmly,<br>The Hirsch &amp; Arnauve Families</p>
+</section>
+
+<!-- ================= GRAND FINALE ================= -->
+<section class="section band center">
+  <p style="font-family:var(--script); font-size:2.4rem; color:var(--caramel);">🗼 Until We Meet in Paris...</p>
+  <p class="measure" style="margin:1.4rem auto 0;">Thank you for taking the time to share your travel plans with us. We know that traveling internationally requires extra effort, and it means so much to us that you're considering making the journey. We cannot wait to celebrate, laugh, dance, spend Shabbos together, and create memories that will last a lifetime.</p>
+  <p style="margin-top:1.4rem; font-family:var(--serif); font-style:italic; font-size:1.2rem;">À bientôt... we'll see you in Paris.</p>
+  <p class="signoff" style="color:var(--caramel);">With love,<br>The Hirsch &amp; Arnauve Families</p>
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -1132,7 +1169,7 @@
     var open = navLinks.classList.toggle('is-open');
     navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-  navLinks.querySelectorAll('a, button').forEach(function(a){
+  navLinks.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){
       navLinks.classList.remove('is-open');
       navToggle.setAttribute('aria-expanded', 'false');
@@ -1171,7 +1208,6 @@
         musicIcon.textContent = '⏸';
         musicLabel.textContent = 'Pause Wedding Melody';
         musicBtn.setAttribute('aria-pressed','true');
-        musicBtn.classList.add('is-playing');
       }).catch(function(){
         // No audio file has been added yet, or the browser blocked playback.
         musicLabel.textContent = 'Music coming soon';
@@ -1182,7 +1218,6 @@
       musicIcon.textContent = '🎵';
       musicLabel.textContent = 'Play Wedding Melody';
       musicBtn.setAttribute('aria-pressed','false');
-      musicBtn.classList.remove('is-playing');
     }
   });
 
@@ -1261,7 +1296,6 @@
 
   /* ---------- Registry modal ---------- */
   var registryOpen = document.getElementById('registryOpen');
-  var navRegistryOpen = document.getElementById('navRegistryOpen');
   var registryModal = document.getElementById('registryModal');
   var registryClose = document.getElementById('registryClose');
 
@@ -1279,7 +1313,6 @@
     if (e.key === 'Escape') closeModal();
   }
   registryOpen.addEventListener('click', openModal);
-  navRegistryOpen.addEventListener('click', openModal);
   registryClose.addEventListener('click', closeModal);
   registryModal.addEventListener('click', function(e){
     if (e.target === registryModal) closeModal();
