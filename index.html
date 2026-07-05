@@ -275,7 +275,16 @@
     color:var(--caramel);
     letter-spacing:0.08em;
   }
-  .hero__eyebrow{margin-top:1.4rem;}
+  .hero__eyebrow{
+    margin-top:1.4rem;
+    font-family:var(--serif);
+    font-style:italic;
+    text-transform:none;
+    letter-spacing:0.02em;
+    font-size:clamp(1.5rem,3.4vw,1.9rem);
+    font-weight:500;
+    color:var(--cognac);
+  }
   .hero__names{
     font-family:var(--script);
     font-size:clamp(3.2rem, 9vw, 6rem);
@@ -698,6 +707,12 @@
   }
   .info-card h3{font-size:1.05rem; margin-bottom:0.5rem;}
   .info-card p{font-size:0.9rem; margin:0;}
+  .info-card__map{
+    display:inline-block; margin-top:0.6rem;
+    font-family:var(--sans); font-size:0.78rem; text-transform:uppercase;
+    letter-spacing:0.03em; color:var(--terracotta); text-decoration:none;
+  }
+  .info-card__map:hover{text-decoration:underline;}
   .info-card__note{margin-top:0.5rem !important; font-size:0.82rem !important; color:var(--ink-soft);}
 
   .experience-list{
@@ -891,7 +906,7 @@
   <p class="hero__sub">Invite you to the wedding celebration of their children</p>
   <h1 class="hero__names">Zalmy <span class="amp">&amp;</span> Feigy</h1>
   <p class="hero__place">In Paris, France</p>
-  <p class="hero__tagline">Bienvenue à Paris — A Weekend of Family • Simcha • Shabbos • Celebration</p>
+  <p class="hero__tagline">Bienvenue à Paris — A Wedding Celebration</p>
 
   <div class="hero__actions" style="margin-top:1.2rem;">
     <button class="btn btn--flash" id="musicToggle" aria-pressed="false">
@@ -1100,10 +1115,12 @@
     <div class="info-card">
       <h3>🕍 Davening</h3>
       <p>The Pletzl<br>17 rue des Rosiers, Paris 4th</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=17+rue+des+Rosiers%2C+75004+Paris%2C+France" target="_blank" rel="noopener noreferrer" class="info-card__map">📍 View on Google Maps →</a>
     </div>
     <div class="info-card">
       <h3>🍽️ Meals &amp; Hospitality Lounge</h3>
       <p>Beth Chabad Bastille<br>37 rue Popincourt, Paris 11th</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=37+rue+Popincourt%2C+75011+Paris%2C+France" target="_blank" rel="noopener noreferrer" class="info-card__map">📍 View on Google Maps →</a>
       <p class="info-card__note">Meals, plus a welcome lounge with food and drinks available all weekend for brunch and snacking.</p>
     </div>
   </div>
@@ -1179,7 +1196,7 @@
 
   /* ---------- Countdown to the wedding ----------
      Wedding date: August 23, 2026. Update this constant if the date ever changes. */
-  var WEDDING_DATE = new Date('2026-08-23T12:00:00-04:00').getTime();
+  var WEDDING_DATE = new Date('2026-08-23T17:00:00+02:00').getTime();
   function updateCountdown(){
     var now = Date.now();
     var diff = WEDDING_DATE - now;
