@@ -646,7 +646,12 @@
   .promise h3{font-size:1.2rem; margin-bottom:0.6rem;}
   .promise p{font-size:0.92rem;}
 
-  .contact-list{display:flex; flex-wrap:wrap; justify-content:center; gap:0.8rem;}
+  .contact-list{display:flex; flex-wrap:wrap; justify-content:center; gap:1.6rem; margin-top:1.2rem;}
+  .contact-item{display:flex; flex-direction:column; align-items:center; gap:0.5rem;}
+  .contact-item__name{font-family:var(--serif); font-size:1.05rem; color:var(--espresso);}
+  .contact-item__row{display:flex; gap:0.5rem;}
+  .contact-item__number{font-size:0.78rem; color:var(--taupe); letter-spacing:0.02em;}
+  .contact-item .contact-chip{padding:0.55rem 1rem; font-size:0.8rem;}
   .contact-chip{
     display:inline-block;
     font-size:0.85rem; letter-spacing:0.02em;
@@ -1136,10 +1141,32 @@
     <p class="hotel-options__note">Tip: Booking.com is sometimes cheaper, with more flexible cancellation terms.</p>
   </div>
 
-  <div class="contact-list" style="margin-top:2rem;" id="concierge">
-    <a href="tel:+33607368105" class="contact-chip contact-chip--light">Mati — +33 6 07 36 81 05</a>
-    <a href="tel:+33665011820" class="contact-chip contact-chip--light">Levi — +33 6 65 01 18 20</a>
-    <a href="tel:+33650025955" class="contact-chip contact-chip--light">Beila — +33 6 50 02 59 55</a>
+  <p class="center measure" style="margin-top:2rem; font-size:0.95rem;">Have any questions or need a hand? Call or WhatsApp any of us:</p>
+  <div class="contact-list" id="concierge">
+    <div class="contact-item">
+      <span class="contact-item__name">Mati</span>
+      <div class="contact-item__row">
+        <a href="tel:+33607368105" class="contact-chip contact-chip--light">📞 Call</a>
+        <a href="https://wa.me/33607368105" target="_blank" rel="noopener noreferrer" class="contact-chip contact-chip--light">💬 WhatsApp</a>
+      </div>
+      <span class="contact-item__number">+33 6 07 36 81 05</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-item__name">Levi</span>
+      <div class="contact-item__row">
+        <a href="tel:+33665011820" class="contact-chip contact-chip--light">📞 Call</a>
+        <a href="https://wa.me/33665011820" target="_blank" rel="noopener noreferrer" class="contact-chip contact-chip--light">💬 WhatsApp</a>
+      </div>
+      <span class="contact-item__number">+33 6 65 01 18 20</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-item__name">Beila</span>
+      <div class="contact-item__row">
+        <a href="tel:+33650025955" class="contact-chip contact-chip--light">📞 Call</a>
+        <a href="https://wa.me/33650025955" target="_blank" rel="noopener noreferrer" class="contact-chip contact-chip--light">💬 WhatsApp</a>
+      </div>
+      <span class="contact-item__number">+33 6 50 02 59 55</span>
+    </div>
   </div>
 </section>
 
