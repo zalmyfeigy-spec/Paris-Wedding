@@ -337,20 +337,21 @@
     display:block;
   }
   .welcome-photo__text{
-    position:absolute; top:6%; left:6%;
-    max-width:44%;
+    position:absolute; top:6%; left:5%;
+    max-width:28%;
     background:rgba(255,253,249,0.78);
     backdrop-filter:blur(3px);
     -webkit-backdrop-filter:blur(3px);
-    padding:1rem 1.1rem;
+    padding:1rem 0.9rem;
     border-radius:4px;
   }
-  .welcome-photo__text h2{font-size:clamp(1.1rem,2.6vw,1.5rem); margin:0 0 0.6rem; line-height:1.25;}
-  .welcome-photo__text p{margin-bottom:0.6rem; font-size:0.85rem; line-height:1.5;}
-  .welcome-photo__text .signoff{font-size:0.95rem; font-family:var(--script);}
+  .welcome-photo__text h2{font-size:clamp(1rem,2.3vw,1.3rem); margin:0 0 0.7rem; line-height:1.3; white-space:nowrap;}
+  .welcome-photo__text p{margin-bottom:0.7rem; font-size:0.82rem; line-height:1.55;}
+  .welcome-photo__text .signoff{font-size:0.88rem; font-family:var(--script);}
   @media (max-width:600px){
-    .welcome-photo__text{max-width:70%; padding:0.7rem 0.8rem;}
-    .welcome-photo__text p{font-size:0.78rem;}
+    .welcome-photo__text{max-width:50%; padding:0.7rem 0.7rem;}
+    .welcome-photo__text h2{white-space:normal; font-size:1rem;}
+    .welcome-photo__text p{font-size:0.72rem;}
   }
 
   .tower-watermark{
