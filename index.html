@@ -75,7 +75,7 @@
   }
 
   .section{
-    padding:6rem 1.5rem;
+    padding:4.5rem 1.5rem;
     max-width:1080px;
     margin:0 auto;
   }
@@ -146,6 +146,12 @@
   .quote-block{margin-top:0.6rem;}
 
   .footer-florals{display:flex; justify-content:center; margin-bottom:0.4rem;}
+
+  .top-banner{
+    background:var(--espresso);
+    display:flex; justify-content:center;
+    padding:0.5rem 0;
+  }
 
   /* ============================================================
      SIDE GARLANDS — vertical floral borders running the full
@@ -309,28 +315,42 @@
   }
   @media (max-width:700px){.hero__tower{width:min(220px, 60vw);}}
 
-  /* Welcome section: bigger photo integrated alongside the letter,
-     instead of sitting alone as an isolated block. */
+  /* Welcome section: a thin, bordered "letter" beside a larger photo. */
   .welcome-split{
     max-width:1080px; margin:0 auto;
-    padding:5rem 1.5rem;
+    padding:3.5rem 1.5rem;
     display:grid;
-    grid-template-columns:1fr 1.15fr;
-    gap:3rem;
-    align-items:center;
+    grid-template-columns:1fr 4fr;
+    gap:1.6rem;
+    align-items:stretch;
   }
   @media (max-width:820px){
-    .welcome-split{grid-template-columns:1fr; padding:3rem 1.5rem;}
+    .welcome-split{grid-template-columns:1fr; padding:2.5rem 1.5rem;}
   }
   .welcome-split__img{
-    width:100%; aspect-ratio:3/4; object-fit:cover;
+    width:100%; height:100%; aspect-ratio:3/4; object-fit:cover;
     border-radius:6px;
     border:8px solid var(--ivory);
     outline:1px solid rgba(139,74,43,0.2);
     box-shadow:0 25px 55px -18px rgba(58,42,30,0.4);
   }
-  .welcome-split__text h2{font-size:clamp(1.7rem,4vw,2.3rem); margin:0.4rem 0 1.2rem;}
-  .welcome-split__text p{margin-bottom:1rem; font-size:1.03rem;}
+  .welcome-split__text{
+    background:var(--ivory);
+    border:1.5px solid var(--cognac);
+    padding:1.8rem 1.3rem;
+    position:relative;
+    box-shadow:var(--shadow);
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .welcome-split__text::before{
+    content:'';
+    position:absolute; inset:7px;
+    border:1px solid rgba(139,74,43,0.35);
+    pointer-events:none;
+  }
+  .welcome-split__text h2{font-size:clamp(1.5rem,3.4vw,1.9rem); margin:0 0 1rem; line-height:1.25;}
+  .welcome-split__text p{margin-bottom:1rem; font-size:1.05rem; line-height:1.6;}
+  .welcome-split__text .signoff{font-size:1rem; font-family:var(--script); font-size:1.5rem;}
 
   .tower-watermark{
     position:absolute; top:50%; left:50%;
@@ -379,6 +399,14 @@
   .btn:hover{background:var(--espresso); color:var(--ivory); border-color:var(--espresso);}
   .btn--solid{background:var(--terracotta); border-color:var(--terracotta); color:var(--ivory);}
   .btn--solid:hover{background:var(--espresso); border-color:var(--espresso);}
+
+  @keyframes flashButton{
+    0%, 100%{ background:var(--fl-crimson); border-color:var(--fl-crimson); color:var(--fl-ivory); }
+    50%{ background:var(--fl-ivory); border-color:var(--fl-crimson); color:var(--fl-crimson); }
+  }
+  .btn--flash{ animation:flashButton 3.6s ease-in-out infinite; }
+  .btn--flash:hover{ animation-play-state:paused; }
+  .btn--flash.is-playing{ animation:none; background:var(--espresso); border-color:var(--espresso); color:var(--ivory); }
 
   /* countdown — the emotional centerpiece of the hero, made to pop */
   .countdown{
@@ -780,6 +808,18 @@
 <!-- ================= SR-only live region for form status ================= -->
 <div id="srStatus" aria-live="polite" style="position:absolute;left:-9999px;"></div>
 
+<!-- ================= TOP BANNER (matches footer) ================= -->
+<div class="top-banner">
+  <svg class="floral-spray floral-spray--footer" viewBox="0 0 100 60" aria-hidden="true">
+    <use href="#florLeaf" transform="translate(20,42) rotate(-30) scale(0.9)" fill="var(--fl-leaf)"/>
+    <use href="#florLeaf" transform="translate(80,42) rotate(210) scale(0.9)" fill="var(--fl-leaf)"/>
+    <use href="#florRose" transform="translate(50,32) scale(1.0)" fill="var(--fl-crimson)"/>
+    <use href="#florRose" transform="translate(30,22) scale(0.7)" fill="var(--fl-orange)"/>
+    <use href="#florRose" transform="translate(70,22) scale(0.7)" fill="var(--fl-ivory)"/>
+    <use href="#florLily" transform="translate(50,12) scale(0.6)" fill="var(--fl-orange)"/>
+  </svg>
+</div>
+
 <!-- ================= NAVIGATION ================= -->
 <nav class="nav">
   <div class="nav__inner">
@@ -828,20 +868,20 @@
   <p class="hero__place">In Paris, France</p>
   <p class="hero__tagline">Bienvenue à Paris — A Weekend of Family • Simcha • Shabbos • Celebration</p>
 
-  <div class="hero__actions">
-    <button class="btn" id="musicToggle" aria-pressed="false">
+  <div class="hero__actions" style="margin-top:1.2rem;">
+    <button class="btn btn--flash" id="musicToggle" aria-pressed="false">
       <span id="musicIcon">🎵</span> <span id="musicLabel">Play Wedding Melody</span>
     </button>
   </div>
 
-  <div style="margin-top:1.8rem;">
+  <div style="margin-top:1rem;">
     <div class="countdown" id="countdown" aria-label="Countdown to the wedding">
       <div class="countdown__unit"><div class="countdown__num" id="cdDays">--</div><div class="countdown__label">Days</div></div>
       <div class="countdown__unit"><div class="countdown__num" id="cdHours">--</div><div class="countdown__label">Hours</div></div>
       <div class="countdown__unit"><div class="countdown__num" id="cdMins">--</div><div class="countdown__label">Mins</div></div>
       <div class="countdown__unit"><div class="countdown__num" id="cdSecs">--</div><div class="countdown__label">Secs</div></div>
     </div>
-    <p style="margin-top:0.7rem; font-size:0.8rem; letter-spacing:0.06em; color:var(--cognac); text-transform:uppercase;">Until We Celebrate Together</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; letter-spacing:0.06em; color:var(--cognac); text-transform:uppercase;">Until We Celebrate Together</p>
   </div>
 
   <!-- REPLACE: point this at your own audio file. See manual, Section E. -->
@@ -850,16 +890,15 @@
   </audio>
 </header>
 
-<!-- ================= WELCOME — photo integrated alongside the letter ================= -->
+<!-- ================= WELCOME — short text beside a larger photo ================= -->
 <section class="welcome-split reveal" id="journey">
+  <div class="welcome-split__text">
+    <h2>Family and Friends</h2>
+    <p>We are overjoyed to celebrate this simcha with you in Paris. We know traveling takes planning, and we're truly grateful you're considering the journey.</p>
+    <p class="signoff">The Hirsch and Arnauve Families</p>
+  </div>
   <div class="welcome-split__photo">
     <img src="assets/eiffel-tower-center.jpg" alt="The Eiffel Tower among spring cherry blossoms" class="welcome-split__img">
-  </div>
-  <div class="welcome-split__text">
-    <p class="eyebrow">A Letter To Our Guests</p>
-    <h2>Dear Family and Friends</h2>
-    <p>We are overjoyed to celebrate this simcha with you in Paris. We know traveling takes planning, and we're truly grateful you're considering the journey — we've done our best to make it easy.</p>
-    <p class="signoff">With all our love,<br>The Hirsch and Arnauve Families</p>
   </div>
 </section>
 
@@ -893,7 +932,7 @@
 </div>
 
 <!-- ================= RSVP / PLANNING FORM ================= -->
-<section class="section reveal" id="rsvp">
+<section class="section reveal" id="rsvp" style="padding-top:3rem;">
   <p class="eyebrow center">🗺️ Begin Your Paris Journey</p>
   <h2 class="center">Share Your Travel Plans</h2>
   <p class="center measure" style="margin:0.9rem auto 0;">To help us prepare the most comfortable and enjoyable experience for everyone, we'd appreciate if you could share your current travel plans.</p>
@@ -1132,6 +1171,7 @@
         musicIcon.textContent = '⏸';
         musicLabel.textContent = 'Pause Wedding Melody';
         musicBtn.setAttribute('aria-pressed','true');
+        musicBtn.classList.add('is-playing');
       }).catch(function(){
         // No audio file has been added yet, or the browser blocked playback.
         musicLabel.textContent = 'Music coming soon';
@@ -1142,6 +1182,7 @@
       musicIcon.textContent = '🎵';
       musicLabel.textContent = 'Play Wedding Melody';
       musicBtn.setAttribute('aria-pressed','false');
+      musicBtn.classList.remove('is-playing');
     }
   });
 
