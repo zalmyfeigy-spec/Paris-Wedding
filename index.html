@@ -602,9 +602,9 @@
     box-shadow:var(--shadow);
     border:1px solid rgba(139,74,43,0.14);
   }
-  .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.4rem 1.6rem; margin-top:2rem;}
-  @media (max-width:700px){.form-grid{grid-template-columns:1fr;}}
-  .field{display:flex; flex-direction:column; gap:0.4rem;}
+  .form-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:1.4rem 1.6rem; margin-top:2rem;}
+  @media (max-width:700px){.form-grid{grid-template-columns:minmax(0,1fr);}}
+  .field{display:flex; flex-direction:column; gap:0.4rem; min-width:0;}
   .field--full{grid-column:1/-1;}
   .field label{font-size:0.8rem; letter-spacing:0.03em; color:var(--espresso); font-weight:500;}
   .field .hint{font-size:0.72rem; color:var(--taupe); margin-top:-0.2rem;}
@@ -622,7 +622,7 @@
     color:var(--espresso);
   }
   .field textarea{resize:vertical; min-height:90px;}
-  .radio-group, .check-group{display:flex; flex-direction:column; gap:0.6rem;}
+  .radio-group, .check-group{display:flex; flex-direction:column; gap:0.6rem; min-width:0;}
   .radio-option{
     display:flex; align-items:flex-start; gap:0.6rem;
     font-size:0.92rem; cursor:pointer;
@@ -630,14 +630,16 @@
     border:1px solid rgba(139,74,43,0.2);
     border-radius:var(--radius);
     transition:border-color 0.2s ease, background 0.2s ease;
+    min-width:0;
   }
   .radio-option:hover{border-color:var(--terracotta);}
-  .radio-option input{margin-top:3px; accent-color:var(--terracotta);}
+  .radio-option input{margin-top:3px; accent-color:var(--terracotta); flex-shrink:0;}
+  .radio-option span{min-width:0; flex:1; word-wrap:break-word; overflow-wrap:break-word;}
   .radio-option:has(input:checked){
     border-color:var(--terracotta);
     background:rgba(217,125,61,0.08);
   }
-  .party-row{display:flex; gap:1rem;}
+  .party-row{display:flex; gap:1rem; min-width:0;}
   .party-row .field{flex:1;}
 
   .conditional-block{
@@ -1071,10 +1073,10 @@
         <div class="field field--full">
           <label id="q4label">4. Are you currently planning to attend the wedding in Paris?</label>
           <div class="radio-group" role="radiogroup" aria-labelledby="q4label">
-            <label class="radio-option"><input type="radio" name="attending" value="yes" required> Yes — we're excited to celebrate with you in Paris!</label>
-            <label class="radio-option"><input type="radio" name="attending" value="hope"> We hope to come / currently working out details.</label>
-            <label class="radio-option"><input type="radio" name="attending" value="deciding"> We are still deciding.</label>
-            <label class="radio-option"><input type="radio" name="attending" value="regret"> Unfortunately, we won't be able to make the trip but will be celebrating from afar.</label>
+            <label class="radio-option"><input type="radio" name="attending" value="yes" required><span>Yes — we're excited to celebrate with you in Paris!</span></label>
+            <label class="radio-option"><input type="radio" name="attending" value="hope"><span>We hope to come / currently working out details.</span></label>
+            <label class="radio-option"><input type="radio" name="attending" value="deciding"><span>We are still deciding.</span></label>
+            <label class="radio-option"><input type="radio" name="attending" value="regret"><span>Unfortunately, we won't be able to make the trip but will be celebrating from afar.</span></label>
           </div>
         </div>
 
@@ -1107,9 +1109,9 @@
           <div class="field field--full">
             <label>7. What are your plans for your stay in Paris?</label>
             <div class="radio-group">
-              <label class="radio-option"><input type="radio" name="hotelHelp" value="independent"> I'll arrange my own accommodations, possibly from the hotel options listed below.</label>
-              <label class="radio-option"><input type="radio" name="hotelHelp" value="local"> We'll be staying with our own family or friends locally.</label>
-              <label class="radio-option"><input type="radio" name="hotelHelp" value="coordinate"> Can you help us find a local family to stay with?</label>
+              <label class="radio-option"><input type="radio" name="hotelHelp" value="independent"><span>I'll arrange my own accommodations, possibly from the hotel options listed below.</span></label>
+              <label class="radio-option"><input type="radio" name="hotelHelp" value="local"><span>We'll be staying with our own family or friends locally.</span></label>
+              <label class="radio-option"><input type="radio" name="hotelHelp" value="coordinate"><span>Can you help us find a local family to stay with?</span></label>
             </div>
           </div>
         </div>
